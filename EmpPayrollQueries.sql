@@ -23,3 +23,10 @@ select * from employee_payroll;
 ---UC_5 Retrieve particular data using where condition
 select * from employee_payroll where Emp_name = 'Alice';
 select * from employee_payroll where StartDate between cast('2001-01-01' as date) and GETDATE();
+
+---UC_6 Add one more column in table which is gender column
+alter table employee_payroll add Gender char(1);
+update employee_payroll set Gender = 'M';
+update employee_payroll set StartDate = '2002-12-17' where Emp_id = 3;
+update employee_payroll set Gender = 'F' where Emp_id = 2 or Emp_id = 5;
+select * from employee_payroll;
