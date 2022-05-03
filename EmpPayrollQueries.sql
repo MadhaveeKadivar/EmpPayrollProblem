@@ -30,3 +30,9 @@ update employee_payroll set Gender = 'M';
 update employee_payroll set StartDate = '2002-12-17' where Emp_id = 3;
 update employee_payroll set Gender = 'F' where Emp_id = 2 or Emp_id = 5;
 select * from employee_payroll;
+
+---UC_7 Calculate SUM, AVG, MIN, MAX, COUNT to do analysis by Male or Female.
+select Gender,count(Emp_id) as Numbers_of_emp_by_gender from employee_payroll group by Gender;
+select sum(Emp_salary) as Total_salary from employee_payroll;
+select Emp_id , Emp_name ,max(Emp_salary) as Maximum_salary from employee_payroll;
+select Gender,count(Emp_id) as Numbers_of_emp_by_gender from employee_payroll group by Gender;
