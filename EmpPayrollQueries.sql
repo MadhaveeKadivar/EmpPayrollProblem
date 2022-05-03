@@ -14,3 +14,6 @@ insert into employee_payroll
 values ('John',300000,'2008-03-03'),('Alice',500000,'2010-08-10');
 insert into employee_payroll(Emp_name,Emp_salary)
 values ('Harry',450000);
+
+---UC_4 Retrieve all data from table
+select * from employee_payroll;
