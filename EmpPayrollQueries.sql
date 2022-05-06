@@ -36,3 +36,21 @@ select Gender,count(Emp_id) as Numbers_of_emp_by_gender from employee_payroll gr
 select sum(Emp_salary) as Total_salary from employee_payroll;
 select Emp_id , Emp_name ,max(Emp_salary) as Maximum_salary from employee_payroll;
 select Gender,count(Emp_id) as Numbers_of_emp_by_gender from employee_payroll group by Gender;
+
+---UC_8 Add phone number ,address and department columm with contraints in table
+alter table employee_payroll add phone_number bigint;
+alter table employee_payroll add department varchar(255) not null default 'Engineering';
+alter table employee_payroll add address varchar(255) default 'India';
+
+---UC9_ extend employee_payroll table to have Basic Pay,Deductions, Taxable Pay,Income Tax, Net Pay
+EXEC sp_rename 'employee_payroll.Emp_salary', 'Basic_Pay', 'COLUMN';
+alter table employee_payroll add deductions float not null;
+alter table employee_payroll add Taxable_pay float not null;
+alter table employee_payroll add Income_tax float not null;
+alter table employee_payroll add Net_pay float not null;
+select * from employee_payroll;
+insert into employee_payroll
+values('Terisa',3000000.0,'2018-03-03',1000000.0,2000000.0,500000.0,1500000.0,895623856,'Sales','Gujarat');
+update employee_payroll set Gender = 'F' where id = 1;
+insert into employee_payroll
+values('Terisa',3000000.0,'2018-03-03',1000000.0,2000000.0,500000.0,1500000.0,895623856,'Marketing','Gujarat','F');
