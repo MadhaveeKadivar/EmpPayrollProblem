@@ -49,8 +49,3 @@ alter table employee_payroll add Taxable_pay float not null;
 alter table employee_payroll add Income_tax float not null;
 alter table employee_payroll add Net_pay float not null;
 select * from employee_payroll;
-insert into employee_payroll
-values('Terisa',3000000.0,'2018-03-03',1000000.0,2000000.0,500000.0,1500000.0,895623856,'Sales','Gujarat');
-update employee_payroll set Gender = 'F' where id = 1;
-insert into employee_payroll
-values('Terisa',3000000.0,'2018-03-03',1000000.0,2000000.0,500000.0,1500000.0,895623856,'Marketing','Gujarat','F');
